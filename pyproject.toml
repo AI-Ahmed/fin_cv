@@ -1,0 +1,50 @@
+[build-system]
+requires = ["flit_core >=3.7,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "fin_cv"
+version = "0.3"
+description = "Scikit-learn style cross-validation classes for time series data"
+authors = [
+    { name = "Samuel Monnier", email = "samuel.monnier@gmail.com" },
+    { name = "Ahmed Nabil Atwa", email = "dr.ahmedna.ai@gmail.com" }
+]
+license = { text = "MIT" }
+readme = "README.rst"
+keywords = ["machine-learning", "cross-validation", "scikit-learn", "time-series"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.6",
+    "Topic :: Scientific/Engineering"
+]
+dependencies = [
+    "numpy>=1.21.0,<2.0",
+    "pandas>=2.2,<3.0"
+]
+
+[project.urls]
+homepage = "https://github.com/AI-Ahmed/fin_cv"
+repository = "https://github.com/AI-Ahmed/fin_cv"
+documentation = "https://github.com/AI-Ahmed/fin_cv#readme"
+
+[project.optional-dependencies]
+dev = [
+    "numpy>=1.21.0,<2.0",
+    "pandas>=2.2,<3.0",
+    # Test dependencies
+    "pytest>=8.2,<9.0",
+    "pytest-mock>=3.14,<4.0"
+]
+
+[tool.flit.module]
+name = "fincv"
+directory = "fincv"
+
+[tool.pytest.ini_options]
+testpaths = ["fincv/tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
