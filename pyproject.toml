@@ -3,7 +3,7 @@ requires = ["flit_core >=3.7,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "fin_cv"
+name = "fincv"
 version = "0.3"
 description = "Scikit-learn style cross-validation classes for time series data"
 authors = [
