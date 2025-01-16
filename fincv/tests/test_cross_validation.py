@@ -4,7 +4,7 @@ import pandas._testing as tm
 import unittest
 
 try:
-    from fin_cv.cross_validation import (BaseTimeSeriesCrossValidator,
+    from fincv.cross_validation import (BaseTimeSeriesCrossValidator,
                                          PurgedWalkForwardCV,
                                          CombPurgedKFoldCV,
                                          purge,
