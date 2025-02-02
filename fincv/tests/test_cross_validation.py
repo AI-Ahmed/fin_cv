@@ -185,7 +185,7 @@ class TestCombPurgedKFoldCV(TestCase):
 
 
 class TestComputeFoldBounds(TestCase):
-    def test_by_samples():
+    def test_by_samples(self):
         """
         Use a 10 sample set, with 5 folds. The fold left bounds are at 0, 2, 4, 6, and 8.
         """
@@ -195,7 +195,7 @@ class TestComputeFoldBounds(TestCase):
         print(result)
         print(compute_fold_bounds(cv, False))
 
-    def test_by_time():
+    def test_by_time(self):
         """
         Create a sample set as described in the docstring of prepare_time_inhomogeneous_cv_object. Inspection shows
         that the fold left bounds are at 0, 7, 13, 16, 18.
@@ -248,7 +248,7 @@ class TestPurge(TestCase):
 
 class TestEmbargo(TestCase):
 
-    def test_zero_embargo():
+    def test_zero_embargo(self):
         """
         Generate a 2n sample data set consisting of
         - hourly samples
@@ -272,7 +272,7 @@ class TestEmbargo(TestCase):
         result = cv.indices[n + 2:]
         np.array_equal(result, embargo(cv, train_indices, test_indices, test_fold_end))
 
-    def test_nonzero_embargo():
+    def test_nonzero_embargo(self):
         """
         Same with an embargo delay of 2h. two more samples have to be embargoed in each case.
         """
