@@ -20,7 +20,10 @@ classifiers = [
     "Topic :: Scientific/Engineering"
 ]
 dependencies = [
-    "numpy>=1.21.0,<2.0",
+    # NumPy 1.x on interpreters below 3.14; NumPy 2.3+ on 3.14+ matches pandas 3.x upstream
+    # and keeps universal `uv lock` forks satisfiable alongside FPAP. Exclude yanked 2.4.0.
+    "numpy>=1.21.0,<2.0; python_full_version < '3.14'",
+    "numpy>=2.3.3,!=2.4.0,<3.0; python_full_version >= '3.14'",
     "pandas>=2.2,<4.0"
 ]
 
@@ -31,7 +34,8 @@ documentation = "https://github.com/AI-Ahmed/fin_cv#readme"
 
 [project.optional-dependencies]
 dev = [
-    "numpy>=1.21.0,<2.0",
+    "numpy>=1.21.0,<2.0; python_full_version < '3.14'",
+    "numpy>=2.3.3,!=2.4.0,<3.0; python_full_version >= '3.14'",
     "pandas>=2.2,<4.0",
     # Test dependencies
     "pytest>=8.2,<9.0",
