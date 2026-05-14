@@ -5,6 +5,7 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "fincv"
 version = "0.3"
+requires-python = ">=3.10,<3.15"
 description = "Scikit-learn style cross-validation classes for time series data"
 authors = [
     { name = "Samuel Monnier", email = "samuel.monnier@gmail.com" },
